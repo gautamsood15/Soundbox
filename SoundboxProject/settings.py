@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-@_)nef!datzrenjx&^vmzp(sq_!ac&lxwr@v_9r9jo-pyh_8c-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1']
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1', "gautamsood.in"]
 
 INTERNAL_IPS = [
     "127.0.0.1",
@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "SoundboxApp",
-    'tailwind',
+    "tailwind",
     'theme',
     'django_browser_reload'
 ]
