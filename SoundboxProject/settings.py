@@ -26,7 +26,7 @@ SECRET_KEY="django-insecure-@_)nef!datzrenjx&^vmzp(sq_!ac&lxwr@v_9r9jo-pyh_8c-"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1', "gautamsood.in"]
+ALLOWED_HOSTS = ['127.0.0.1', "gautamsood.in", '0.0.0.0', "https://secret-citadel-22523.herokuapp.com/"]
 
 INTERNAL_IPS = [
     "127.0.0.1",
@@ -57,6 +57,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django_browser_reload.middleware.BrowserReloadMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = "SoundboxProject.urls"
@@ -85,10 +86,14 @@ WSGI_APPLICATION = "SoundboxProject.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "d62rrqtjl1r2d0",
+        "HOST": "ec2-107-23-76-12.compute-1.amazonaws.com",
+        "PORT": "5432",
+        "USER": "fpbthtivkeyztn",
+        "PASSWORD": "bd38cd0298aff89da7f80b5c1827f91f5081f33bd4de826bb3f929dcc73c1140",
     }
-}
+} 
 
 
 # Password validation
@@ -130,7 +135,7 @@ MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
 
 
