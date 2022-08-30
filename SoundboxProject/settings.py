@@ -26,7 +26,7 @@ SECRET_KEY="django-insecure-@_)nef!datzrenjx&^vmzp(sq_!ac&lxwr@v_9r9jo-pyh_8c-"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', "gautamsood.in", '0.0.0.0', "https://secret-citadel-22523.herokuapp.com/"]
+ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0', "secret-citadel-22523.herokuapp.com"]
 
 INTERNAL_IPS = [
     "127.0.0.1",
@@ -87,11 +87,11 @@ WSGI_APPLICATION = "SoundboxProject.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "d62rrqtjl1r2d0",
-        "HOST": "ec2-107-23-76-12.compute-1.amazonaws.com",
+        "NAME": "d2m2rome5fp6q6",
+        "HOST": "ec2-3-223-169-166.compute-1.amazonaws.com",
         "PORT": "5432",
-        "USER": "fpbthtivkeyztn",
-        "PASSWORD": "bd38cd0298aff89da7f80b5c1827f91f5081f33bd4de826bb3f929dcc73c1140",
+        "USER": "cuwvezxelmyzhc",
+        "PASSWORD": "183e63fb16e2f8daf3eb08f0c6dfbcff2b24f7b02dbabcee6e2fb516799cac2d", 
     }
 } 
 
