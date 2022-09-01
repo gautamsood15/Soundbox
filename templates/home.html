@@ -101,4 +101,89 @@ Soundbox: The world of better music
 <audio class="audio-player" preload="metadata" autoplay="false" src="/media/musics/2017-04-14_-_Happy_Dreams_-_David_Fesliyan.mp3"></audio>
 </div>
 
+{{music_list | json_script:'musics'}}
+
+<script>
+  const player=document.querySelector('.audio-player')
+  const play=document.querySelector('.playing')
+  const prev=document.querySelector('.prev')
+  const next=document.querySelector('.next')
+  const duration=document.querySelector('.Duration')
+  const currentTime=document.querySelector('.currentDuration')
+  const progress=document.querySelector('.progress')
+  const progress_container=document.querySelector('.progress_container')
+  const audio_tracks=document.querySelector('.audio-tracks')
+  const song_title=document.querySelector('.song-title')
+  const artist=document.querySelector('.artist')
+  const album=document.querySelector('.album')
+  const music_img=document.querySelector('.music_img')
+
+  //init music indexing
+  let musicIndex = 0
+
+  //get music from DOM
+  const musics=JSON.parse(document.getElementById('musics').textContent)
+
+  //functions
+  const setSRC=()=>{
+    player.src=`/media/${musics[musicIndex].audio_file}`
+    song_title.textContent=musics[musicIndex].title
+    artist.textContent=musics[musicIndex].artist
+    music_img.setAttribute('src',`/media/${musics[musicIndex].cover_image}`)
+    if (musics[musicIndex].album!==null){
+      album.textContent=musics[musicIndex].album
+    } else{
+      album.textContent="Single"
+    }
+  }
+
+
+  const playOrpause=()=>{
+    if(player.paused){
+      player.play()
+    } else {
+      player.pause()
+    }
+  }
+
+  const formatTime=(secs)=>{
+    let min=Math.floor((secs%3600)/60)
+    let sec=Math.floor(secs%60)
+    if (sec<10){
+      sec=`0${sec}`
+    }
+    return `${min}:${sec}`
+  }
+
+
+  // load music on refresh
+  setSRC()
+  player.pause()
+
+  // when play is clicked
+  play.addEventListener('click', ()=>{
+    playOrpause()
+  })
+
+  // load duration of music for UI
+  player.addEventListener('loadedmetadata', ()=> {
+    duration.textContent=formatTime(player.duration)
+  })
+
+  // update progress bar 
+  player.addEventListener('timeupdate', ()=>{
+    let sec = player.currentTime
+    let total = player.duration
+    
+    currentTime.textContent = formatTime(player.currentTime)
+    let progress_container_width=progress_container.offsetWidth
+    let progress_width=progress.offsetWidth
+    let audio_played = (sec/total)*100
+    let newWidth = progress_container_width*(audio_played/100)
+    progress.style.width = `${newWidth}px`
+  })
+
+
+</script>
+
 {% endblock content %}
