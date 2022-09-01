@@ -5,4 +5,5 @@ app_name = 'SoundboxApp'
 
 urlpatterns = [
     path('', homePage, name="home_page"),
+    
 ]
