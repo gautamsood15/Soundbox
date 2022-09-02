@@ -26,7 +26,7 @@ SECRET_KEY="django-insecure-@_)nef!datzrenjx&^vmzp(sq_!ac&lxwr@v_9r9jo-pyh_8c-"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0', "secret-citadel-22523.herokuapp.com"]
+ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0', "limitless-reaches-21613.herokuapp.com"]
 
 INTERNAL_IPS = [
     "127.0.0.1",
@@ -85,17 +85,13 @@ WSGI_APPLICATION = "SoundboxProject.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-#    "default": {
-#        "ENGINE": "django.db.backends.postgresql",
-#        "NAME": "d2m2rome5fp6q6",
-#        "HOST": "ec2-3-223-169-166.compute-1.amazonaws.com",
-#        "PORT": "5432",
-#        "USER": "cuwvezxelmyzhc",
-#        "PASSWORD": "183e63fb16e2f8daf3eb08f0c6dfbcff2b24f7b02dbabcee6e2fb516799cac2d", 
-#    }
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "d1vqhprie8oc8m",
+        "HOST": "ec2-44-207-126-176.compute-1.amazonaws.com",
+        "PORT": "5432",
+        "USER": "xtkwktpklkulvd",
+        "PASSWORD": "0b33f43f598488c14a954cb911beb6647caf67f9975ad65f04b761aa16795827", 
     }
 } 
 
