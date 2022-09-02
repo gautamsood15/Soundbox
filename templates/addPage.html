@@ -27,6 +27,16 @@
        
         background-color: rgb(27, 108, 27);
     }
+
+    .music_file {
+        margin-right: 10px;
+        transition: background-color ease 0.3s;
+        
+    }
+
+    .cover_file {
+        transition: background-color ease 0.3s;
+    }
         
     .music_file:hover {
         border-color: green;
@@ -55,7 +65,9 @@
    
   {% csrf_token %}
 
- 
+
+
+
     <div class="my-4">
         <label for="id_title" class="text-lg" style="color: rgb(13, 131, 35);">Album (Optional):</label>
         <input type="text" name="album" maxlength="500" id="id_album" class="block w-full p-2 outline-none border-1 border-green rounded-lg">
@@ -66,7 +78,7 @@
     </div>
     <div class="my-4">
         <label for="id_title" class="text-lg" style="color: rgb(13, 131, 35);;">Artist:</label>
-        <input type="text" name="artist" maxlength="500" required="" id="id_artiste" class="block w-full p-2 outline-none border-1 border-green rounded-lg">
+        <input type="text" name="artist" maxlength="500" required="" id="id_artist" class="block w-full p-2 outline-none border-1 border-green rounded-lg">
     </div>
 
 
