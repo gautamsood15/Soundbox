@@ -85,13 +85,17 @@ WSGI_APPLICATION = "SoundboxProject.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
+#    "default": {
+#        "ENGINE": "django.db.backends.postgresql",
+#        "NAME": "d2m2rome5fp6q6",
+#        "HOST": "ec2-3-223-169-166.compute-1.amazonaws.com",
+#        "PORT": "5432",
+#        "USER": "cuwvezxelmyzhc",
+#        "PASSWORD": "183e63fb16e2f8daf3eb08f0c6dfbcff2b24f7b02dbabcee6e2fb516799cac2d", 
+#    }
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "d2m2rome5fp6q6",
-        "HOST": "ec2-3-223-169-166.compute-1.amazonaws.com",
-        "PORT": "5432",
-        "USER": "cuwvezxelmyzhc",
-        "PASSWORD": "183e63fb16e2f8daf3eb08f0c6dfbcff2b24f7b02dbabcee6e2fb516799cac2d", 
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 } 
 
