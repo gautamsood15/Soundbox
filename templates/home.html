@@ -224,7 +224,7 @@ Soundbox: The world of better music
 
 
   audio_tracks.addEventListener('click', e => {
-    if (e.target.nodeName=="BUTTON" && e.target.classList.contains('play_single')) || (e.target.nodeName=='svg' && e.target.classList.contains('play_svg')){
+    if ((e.target.nodeName=="BUTTON" && e.target.classList.contains('play_single')) || (e.target.nodeName=='svg' && e.target.classList.contains('play_svg'))) {
       let parent_cont
 
       if (e.target=='BUTTON'){

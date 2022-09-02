@@ -1,3 +1,4 @@
+from SoundboxApp.form import AddMusicForm
 from django.shortcuts import render
 from .models import Music
 
@@ -7,3 +8,9 @@ def homePage(request):
     music_list=list(Music.objects.all().values())
     context = {'music': music, 'music_list': music_list}
     return render(request, "home.html", context)
+
+
+def addMusic(request):
+    form=AddMusicForm()
+    context = {'form': form}
+    return render(request, "addPage.html", context)
